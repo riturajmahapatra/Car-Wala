@@ -9,5 +9,5 @@ export interface CustomBtnProps {
 
 export interface SearchManufacturerProps {
 	manufacturer?: string;
-	setmanufacturer?: (manufacturer: string) => void;
+	setManuFacturer?: (manufacturer: string) => void;
 }
