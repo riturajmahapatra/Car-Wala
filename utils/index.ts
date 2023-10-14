@@ -5,7 +5,7 @@ export async function fetchCars() {
   };
 
   const response = await fetch(
-    "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla",
+    "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?year=2023",
     { headers: headers }
   );
 
@@ -13,3 +13,20 @@ export async function fetchCars() {
 
   return result;
 }
+
+/* rent calculation */
+
+export const calculateCarRent = (city_mpg: number, year: number) => {
+  const basePricePerDay = 2000; // Base rental price per day in Indian Rupees
+  const mileageFactor = 10; // Additional rate per kilometer driven in Indian Rupees
+  const ageFactor = 500; // Additional rate per year of vehicle age in Indian Rupees
+
+  // Calculate additional rate based on mileage and age
+  const mileageRate = city_mpg * mileageFactor;
+  const ageRate = (new Date().getFullYear() - year) * ageFactor;
+
+  // Calculate total rental rate per day
+  const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
+
+  return rentalRatePerDay.toFixed(0); // Rounding to the nearest rupee
+};
