@@ -5,6 +5,9 @@ export interface CustomBtnProps {
   customclass?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   btnType?: "button" | "submit" /* ? dedicates optional or not */;
+  textStyles?: string;
+  rightIcon?: string;
+  isDisabled?: boolean;
 }
 
 export interface SearchManufacturerProps {
