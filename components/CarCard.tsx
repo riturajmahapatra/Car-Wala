@@ -1,6 +1,6 @@
 "use client";
 import { Carprops } from "@/types";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import Image from "next/image";
 import React, { useState } from "react";
 import { CarDetails, CustomBtn } from ".";
@@ -29,7 +29,7 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
       <div className="relative w-full -w-40 object-contain my-3">
         <Image
-          src={`/hero.png`}
+          src={generateCarImageUrl(car)}
           alt="car-img"
           height={500}
           width={500}
@@ -71,7 +71,12 @@ const CarCard = ({ car }: CarCardProps) => {
           />
         </div>
       </div>
-      <CarDetails />
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />{" "}
+      {/* this is the modal that transitions to a modal */}
     </div>
   );
 };
