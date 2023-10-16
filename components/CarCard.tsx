@@ -17,10 +17,9 @@ const CarCard = ({ car }: CarCardProps) => {
 
   return (
     <div className="car-card group">
-      <div className="car-card__content">
-        <h2 className="car-card__content-title">
-          {make} {model}
-        </h2>
+      <div className="car-card__content flex-col">
+        <h2 className="car-card__content-title">{make}</h2>
+        <h3 className="text-gray car-card__content-subtitle">{model}</h3>
       </div>
       <p className=" flex mt-6 text-[32px] font-semibold">
         <span className="self-start text-[18px]">₹</span>

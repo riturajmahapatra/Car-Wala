@@ -7,7 +7,7 @@ export async function fetchCars() {
   };
 
   const response = await fetch(
-    "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?year=2021",
+    "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?year=2017",
     { headers: headers }
   );
 
